@@ -9,12 +9,12 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1a252f 100%);
     min-height: 100vh;
-    min-height: 100dvh; /* Dynamic viewport height for mobile */
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
     padding: 5px;
     box-sizing: border-box;
 }
@@ -112,6 +112,10 @@ body {
     box-shadow: 
         0 2px 8px rgba(0, 0, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    /* Better touch targets */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .btn:hover {
@@ -219,9 +223,8 @@ body {
     height: 122px;
 }
 
-/* ===== NO CHANGES TO SMALL DEVICE STYLES ===== */
-
-/* Responsive Design for smaller tablets and large phones */
+/* MOBILE OPTIMIZATIONS - Only for small devices */
+/* Small Phones (480px and below) */
 @media (max-width: 480px) {
     body {
         padding: 8px;
@@ -235,36 +238,86 @@ body {
     }
 
     .btn {
-        width: 60px;
-        height: 60px;
-        font-size: 22px;
+        width: 100%;
+        height: 70px;
+        min-height: 70px;
+        font-size: 28px;
+        box-shadow: 
+            0 4px 12px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
 
     .main-display {
-        font-size: 36px;
-        min-height: 45px;
+        font-size: 48px;
+        min-height: 60px;
     }
 
     .display-container {
-        min-height: 80px;
-        padding: 18px 20px;
-        margin-bottom: 18px;
+        min-height: 100px;
+        padding: 20px;
+        margin-bottom: 20px;
     }
 
     .button-grid {
-        gap: 10px;
+        gap: 15px;
+        margin-top: 10px;
     }
 
     .btn-equals {
-        width: 60px;
-        height: 130px;
-        border-radius: 30px;
+        width: 100%;
+        height: 155px;
+        border-radius: 35px;
     }
 
     .btn-zero {
         width: auto;
-        border-radius: 30px;
-        padding-left: 30px;
+        border-radius: 35px;
+        padding-left: 35px;
+    }
+
+    .calculation-history {
+        font-size: 18px;
+        min-height: 22px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Very Small Phones (360px and below) */
+@media (max-width: 360px) {
+    .calculator {
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .btn {
+        height: 65px;
+        min-height: 65px;
+        font-size: 26px;
+    }
+
+    .main-display {
+        font-size: 42px;
+        min-height: 55px;
+    }
+
+    .display-container {
+        min-height: 90px;
+        padding: 18px;
+        margin-bottom: 18px;
+    }
+
+    .button-grid {
+        gap: 12px;
+    }
+
+    .btn-equals {
+        height: 142px;
+        border-radius: 32px;
+    }
+
+    .btn-zero {
+        border-radius: 32px;
+        padding-left: 32px;
     }
 
     .calculation-history {
@@ -273,46 +326,42 @@ body {
     }
 }
 
-/* Responsive Design for standard phones */
-@media (max-width: 360px) {
+/* Ultra Small Phones (320px and below) */
+@media (max-width: 320px) {
     .calculator {
-        width: min(320px, 95vw);
-        padding: 15px;
-        border-radius: 18px;
-        margin: 0;
+        padding: 12px;
+        border-radius: 15px;
     }
 
     .btn {
-        width: 55px;
-        height: 55px;
-        font-size: 20px;
+        height: 60px;
+        min-height: 60px;
+        font-size: 24px;
     }
 
     .main-display {
-        font-size: 32px;
-        min-height: 40px;
+        font-size: 38px;
+        min-height: 50px;
     }
 
     .display-container {
-        min-height: 75px;
-        padding: 15px 18px;
+        min-height: 85px;
+        padding: 15px;
         margin-bottom: 15px;
     }
 
     .button-grid {
-        gap: 8px;
+        gap: 10px;
     }
 
     .btn-equals {
-        width: 55px;
-        height: 118px;
-        border-radius: 27px;
+        height: 130px;
+        border-radius: 30px;
     }
 
     .btn-zero {
-        width: auto;
-        border-radius: 27px;
-        padding-left: 27px;
+        border-radius: 30px;
+        padding-left: 30px;
     }
 
     .calculation-history {
@@ -321,54 +370,122 @@ body {
     }
 }
 
-/* ===== MODIFICATION FOR LARGE DEVICES ===== */
-/* This section makes the calculator more compact for desktop views. */
-@media (min-width: 768px) {
-    .calculator {
-        width: 320px;
-        max-width: 320px;
-        padding: 15px;
-    }
-
+/* Medium Phones and Small Tablets */
+@media (min-width: 361px) and (max-width: 480px) {
     .btn {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
+        height: 75px;
+        min-height: 75px;
+        font-size: 30px;
     }
 
     .main-display {
-        font-size: 30px;
-        min-height: 35px;
+        font-size: 52px;
+        min-height: 65px;
     }
 
     .display-container {
-        min-height: 60px;
-        padding: 10px 12px;
-        margin-bottom: 12px;
+        min-height: 110px;
+        padding: 22px;
+        margin-bottom: 22px;
     }
 
     .button-grid {
-        gap: 7px;
+        gap: 18px;
     }
 
     .btn-equals {
-        width: 50px;
-        height: 112px;
-        border-radius: 25px;
+        height: 168px;
+        border-radius: 37px;
     }
 
     .btn-zero {
-        width: auto;
-        border-radius: 25px;
-        padding-left: 25px;
+        border-radius: 37px;
+        padding-left: 37px;
     }
 
     .calculation-history {
-        font-size: 13px;
-        min-height: 15px;
+        font-size: 20px;
+        min-height: 24px;
     }
 }
 
+/* Tablets and Small Desktops */
+@media (min-width: 481px) and (max-width: 768px) {
+    .calculator {
+        max-width: 380px;
+        padding: 25px;
+    }
+
+    .btn {
+        height: 65px;
+        min-height: 65px;
+        font-size: 26px;
+    }
+
+    .main-display {
+        font-size: 45px;
+        min-height: 58px;
+    }
+
+    .display-container {
+        min-height: 100px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .button-grid {
+        gap: 15px;
+    }
+
+    .btn-equals {
+        height: 145px;
+        border-radius: 32px;
+    }
+
+    .btn-zero {
+        border-radius: 32px;
+        padding-left: 32px;
+    }
+}
+
+/* Large Desktops */
+@media (min-width: 769px) {
+    .calculator {
+        max-width: 350px;
+        padding: 20px;
+    }
+
+    .btn {
+        height: 60px;
+        min-height: 60px;
+        font-size: 24px;
+    }
+
+    .main-display {
+        font-size: 40px;
+        min-height: 50px;
+    }
+
+    .display-container {
+        min-height: 85px;
+        padding: 18px;
+        margin-bottom: 18px;
+    }
+
+    .button-grid {
+        gap: 12px;
+    }
+
+    .btn-equals {
+        height: 132px;
+        border-radius: 30px;
+    }
+
+    .btn-zero {
+        border-radius: 30px;
+        padding-left: 30px;
+    }
+}
 
 /* Animation for number entry */
 @keyframes numberEntry {
@@ -408,4 +525,30 @@ body {
 .btn-operator.highlighted {
     background: rgba(62, 122, 192, 0.95) !important;
     box-shadow: 0 0 20px rgba(42, 82, 152, 0.8) !important;
+}
+
+/* Touch improvements for mobile devices only */
+@media (pointer: coarse) and (max-width: 480px) {
+    .btn:hover {
+        /* Disable hover effects on touch devices */
+        transform: none;
+        background: inherit;
+        box-shadow: inherit;
+    }
+    
+    .btn:active {
+        transform: scale(0.92);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .calculator {
+        border-width: 0.5px;
+    }
+    
+    .btn {
+        border-width: 0.5px;
+    }
 }

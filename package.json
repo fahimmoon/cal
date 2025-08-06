@@ -1,7 +1,7 @@
 {
-  "name": "modern-calculator",
+  "name": "cal-modern-calculator",
   "version": "1.0.0",
-  "description": "A sleek, responsive calculator with beautiful UI and clean code architecture",
+  "description": "A modern, responsive calculator with glassmorphism UI - Computer Assisted Learning project",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8080",
@@ -13,10 +13,12 @@
     "javascript",
     "es6",
     "responsive",
-    "dark-mode",
-    "modular"
+    "glassmorphism",
+    "computer-assisted-learning",
+    "education",
+    "digital-empowerment"
   ],
-  "author": "Your Name",
+  "author": "Digital Empowerment Network",
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {},
@@ -25,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/modern-calculator.git"
+    "url": "https://github.com/fahimmoon/cal.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/modern-calculator/issues"
+    "url": "https://github.com/fahimmoon/cal/issues"
   },
-  "homepage": "https://github.com/yourusername/modern-calculator#readme"
+  "homepage": "https://github.com/fahimmoon/cal#readme"
 }
